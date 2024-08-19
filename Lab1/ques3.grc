@@ -1,0 +1,532 @@
+options:
+  parameters:
+    author: ''
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: top_block
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: top_block
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: a1
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: band1
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '1'
+    stop: '10'
+    value: '1'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [0, 88.0]
+    rotation: 0
+    state: enabled
+- name: a2
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: band2
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '1'
+    stop: '100'
+    value: '1'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [0, 128.0]
+    rotation: 0
+    state: enabled
+- name: a3
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: band3
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '1'
+    stop: '100'
+    value: '1'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 184.0]
+    rotation: 0
+    state: enabled
+- name: a4
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: bannd4
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '1'
+    stop: '100'
+    value: '1'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [0, 256.0]
+    rotation: 0
+    state: enabled
+- name: a5
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: band5
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '1'
+    stop: '100'
+    value: '1'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [0, 320.0]
+    rotation: 0
+    state: enabled
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '32000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 12]
+    rotation: 0
+    state: enabled
+- name: audio_sink_0
+  id: audio_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    device_name: ''
+    num_inputs: '1'
+    ok_to_block: 'True'
+    samp_rate: samp_rate
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [968, 360.0]
+    rotation: 0
+    state: enabled
+- name: audio_sink_1
+  id: audio_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    device_name: ''
+    num_inputs: '1'
+    ok_to_block: 'True'
+    samp_rate: samp_rate
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [808, 1056.0]
+    rotation: 0
+    state: disabled
+- name: band_pass_filter_0
+  id: band_pass_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    beta: '6.76'
+    comment: ''
+    decim: '1'
+    gain: a1
+    high_cutoff_freq: '500'
+    interp: '1'
+    low_cutoff_freq: '20'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate
+    type: fir_filter_fff
+    width: '10'
+    win: window.WIN_HAMMING
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [432, 28.0]
+    rotation: 0
+    state: enabled
+- name: band_pass_filter_0_0
+  id: band_pass_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    beta: '6.76'
+    comment: ''
+    decim: '1'
+    gain: a2
+    high_cutoff_freq: '3000'
+    interp: '1'
+    low_cutoff_freq: '500'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate
+    type: fir_filter_fff
+    width: '50'
+    win: window.WIN_HAMMING
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [432, 220.0]
+    rotation: 0
+    state: enabled
+- name: band_pass_filter_0_0_0
+  id: band_pass_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    beta: '6.76'
+    comment: ''
+    decim: '1'
+    gain: a3
+    high_cutoff_freq: '6000'
+    interp: '1'
+    low_cutoff_freq: '3000'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate
+    type: fir_filter_fff
+    width: '100'
+    win: window.WIN_HAMMING
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [432, 412.0]
+    rotation: 0
+    state: enabled
+- name: band_pass_filter_0_0_0_0
+  id: band_pass_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    beta: '6.76'
+    comment: ''
+    decim: '1'
+    gain: a4
+    high_cutoff_freq: '9000'
+    interp: '1'
+    low_cutoff_freq: '6000'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate
+    type: fir_filter_fff
+    width: '100'
+    win: window.WIN_HAMMING
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [432, 604.0]
+    rotation: 0
+    state: enabled
+- name: band_pass_filter_0_0_0_0_0
+  id: band_pass_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    beta: '6.76'
+    comment: ''
+    decim: '1'
+    gain: a5
+    high_cutoff_freq: '15000'
+    interp: '1'
+    low_cutoff_freq: '9000'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate
+    type: fir_filter_fff
+    width: '100'
+    win: window.WIN_HAMMING
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [432, 796.0]
+    rotation: 0
+    state: enabled
+- name: band_pass_filter_0_0_0_0_0_0
+  id: band_pass_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    beta: '6.76'
+    comment: ''
+    decim: '1'
+    gain: '1'
+    high_cutoff_freq: '15000'
+    interp: '1'
+    low_cutoff_freq: '14999'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate
+    type: fir_filter_fff
+    width: '100'
+    win: window.WIN_HAMMING
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [432, 996.0]
+    rotation: 0
+    state: disabled
+- name: blocks_add_xx_0
+  id: blocks_add_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '5'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [824, 304.0]
+    rotation: 0
+    state: enabled
+- name: blocks_multiply_const_vxx_0
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: a5
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [616, 856.0]
+    rotation: 0
+    state: disabled
+- name: blocks_multiply_const_vxx_0_0
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: a4
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [616, 664.0]
+    rotation: 0
+    state: disabled
+- name: blocks_multiply_const_vxx_0_0_0
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: a3
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [616, 472.0]
+    rotation: 0
+    state: disabled
+- name: blocks_multiply_const_vxx_0_0_0_0
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: a2
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [616, 280.0]
+    rotation: 0
+    state: disabled
+- name: blocks_multiply_const_vxx_0_0_0_0_0
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: a1
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [608, 88.0]
+    rotation: 0
+    state: disabled
+- name: blocks_multiply_const_vxx_0_1
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: a5
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [640, 1056.0]
+    rotation: 0
+    state: disabled
+- name: blocks_throttle2_0
+  id: blocks_throttle2
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    limit: auto
+    maximum: '0.1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [272, 464.0]
+    rotation: 0
+    state: enabled
+- name: blocks_wavfile_source_0
+  id: blocks_wavfile_source
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    file: /home/nimayshah/Downloads/Bach.wav
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    nchan: '1'
+    repeat: 'True'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [64, 464.0]
+    rotation: 0
+    state: enabled
+
+connections:
+- [band_pass_filter_0, '0', blocks_add_xx_0, '0']
+- [band_pass_filter_0, '0', blocks_multiply_const_vxx_0_0_0_0_0, '0']
+- [band_pass_filter_0_0, '0', blocks_add_xx_0, '1']
+- [band_pass_filter_0_0, '0', blocks_multiply_const_vxx_0_0_0_0, '0']
+- [band_pass_filter_0_0_0, '0', blocks_add_xx_0, '2']
+- [band_pass_filter_0_0_0, '0', blocks_multiply_const_vxx_0_0_0, '0']
+- [band_pass_filter_0_0_0_0, '0', blocks_add_xx_0, '3']
+- [band_pass_filter_0_0_0_0, '0', blocks_multiply_const_vxx_0_0, '0']
+- [band_pass_filter_0_0_0_0_0, '0', blocks_add_xx_0, '4']
+- [band_pass_filter_0_0_0_0_0, '0', blocks_multiply_const_vxx_0, '0']
+- [band_pass_filter_0_0_0_0_0_0, '0', blocks_multiply_const_vxx_0_1, '0']
+- [blocks_add_xx_0, '0', audio_sink_0, '0']
+- [blocks_multiply_const_vxx_0, '0', blocks_add_xx_0, '4']
+- [blocks_multiply_const_vxx_0_0, '0', blocks_add_xx_0, '3']
+- [blocks_multiply_const_vxx_0_0_0, '0', blocks_add_xx_0, '2']
+- [blocks_multiply_const_vxx_0_0_0_0, '0', blocks_add_xx_0, '1']
+- [blocks_multiply_const_vxx_0_0_0_0_0, '0', blocks_add_xx_0, '0']
+- [blocks_multiply_const_vxx_0_1, '0', audio_sink_1, '0']
+- [blocks_throttle2_0, '0', band_pass_filter_0, '0']
+- [blocks_throttle2_0, '0', band_pass_filter_0_0, '0']
+- [blocks_throttle2_0, '0', band_pass_filter_0_0_0, '0']
+- [blocks_throttle2_0, '0', band_pass_filter_0_0_0_0, '0']
+- [blocks_throttle2_0, '0', band_pass_filter_0_0_0_0_0, '0']
+- [blocks_throttle2_0, '0', band_pass_filter_0_0_0_0_0_0, '0']
+- [blocks_wavfile_source_0, '0', blocks_throttle2_0, '0']
+
+metadata:
+  file_format: 1
+  grc_version: 3.10.9.2
